@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import AddStudent from "./pages/AddStudent";
+import { useState ,createContext } from "react";
+import Addpodact from "./pages/Addprodact"
+
+export const  Appcontext = createContext()
 
 function App() {
+
+  const [ username , setUsername ] = useState("zakaria")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Appcontext.Provider value={{username , setUsername}}>
+      {/* <Navbar /> */}
+      <Addpodact />
+       </Appcontext.Provider>
+    </>
   );
 }
 

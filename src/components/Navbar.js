@@ -1,8 +1,7 @@
 import React , {useContext} from 'react'
-import { Appcontext } from '../App'
+import {Link} from 'react-router-dom'
 
  function Navbar() {
-    const {username} = useContext(Appcontext)
 
   return (
     <>
@@ -14,11 +13,13 @@ import { Appcontext } from '../App'
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
+        <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+        <Link class="nav-link" to="/blogs">Blogs</Link>
+        <Link class="nav-link" to="#">Add New Blog</Link>
+        <Link class="nav-link" to="#">User Profile</Link>
+
         <div>
-            <h6>{username}</h6>
+            {/*    */}
         </div>
      
       </div>

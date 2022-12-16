@@ -12,9 +12,9 @@ function AddStudent() {
     async function sendata(e){
       e.preventDefault()
      await  axios.post('http://localhost:3001/addprodact' , {
-        pname : pname,
-        pdes : pdes,
-        pprice : pprice
+      prodactname : pname,
+      prodactdescription : pdes,
+      prodactprice : pprice
       }).then( res => console.log(res.data.message)).catch( err => console.log(err))
 
    }
